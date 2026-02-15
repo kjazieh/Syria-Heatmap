@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Syria Governorate Heatmap</title>
+  <link rel="stylesheet" href="leaflet.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="layout">
+    <section class="panel">
+      <h1>Syria Governorate Heatmap</h1>
+      <p>Set governorate values, tune label and palette options, then export or share the map.</p>
+      <p id="status" class="status" hidden></p>
+
+      <section class="panel-section">
+        <h2>Palette</h2>
+        <label for="palette" class="label">Color Palette</label>
+        <select id="palette">
+          <option value="red" selected>Red</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+          <option value="orange">Orange</option>
+          <option value="purple">Purple</option>
+          <option value="yellow">Yellow</option>
+        </select>
+      </section>
+
+      <section class="panel-section">
+        <h2>Labels</h2>
+        <label class="label label-inline" for="showNames">
+          <input id="showNames" type="checkbox" checked />
+          Show governorate names
+        </label>
+
+        <label for="labelMode" class="label">Map Label Language</label>
+        <select id="labelMode">
+          <option value="en" selected>English</option>
+          <option value="ar">Arabic</option>
+          <option value="both">English + Arabic</option>
+        </select>
+
+        <label class="label label-inline" for="showValues">
+          <input id="showValues" type="checkbox" />
+          Show values under governorate names
+        </label>
+      </section>
+
+      <section class="panel-section">
+        <h2>Values</h2>
+        <div id="inputs" class="inputs"></div>
+
+        <div class="actions">
+          <button id="applyBtn" type="button">Apply Heatmap</button>
+          <button id="resetBtn" type="button" class="secondary">Reset Values</button>
+        </div>
+      </section>
+
+      <section class="panel-section">
+        <h2>Export</h2>
+        <label for="exportPreset" class="label">PNG Preset</label>
+        <select id="exportPreset">
+          <option value="map_legend" selected>Map + Legend</option>
+          <option value="map_only">Map Only</option>
+          <option value="map_legend_meta">Map + Legend + Title/Date</option>
+        </select>
+        <div class="actions single-action">
+          <button id="exportBtn" type="button" class="secondary">Export PNG</button>
+        </div>
+      </section>
+
+      <section class="panel-section">
+        <h2>Share</h2>
+        <div class="actions single-action">
+          <button id="copyLinkBtn" type="button" class="secondary">Copy Share Link</button>
+        </div>
+      </section>
+
+      <footer class="panel-footer">
+        <p>Boundary source: <a href="https://www.geoboundaries.org/" target="_blank" rel="noopener noreferrer">geoBoundaries (SYR ADM1)</a></p>
+        <p id="generatedAt">Last updated: -</p>
+      </footer>
+    </section>
+
+    <section class="map-wrap">
+      <div id="map" aria-label="Syria governorates map"></div>
+      <div id="legend" class="legend" hidden>
+        <div class="legend-head">
+          <span class="legend-title">Value Scale</span>
+          <span id="legendRange">0 to 0</span>
+        </div>
+        <div id="legendBar" class="legend-bar"></div>
+        <div id="legendTicks" class="legend-ticks"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="leaflet.js"></script>
+  <script src="html2canvas.min.js"></script>
+  <script src="syria-adm1.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
