@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Syria Governorate Heatmap"
+type: software
+authors:
+  - family-names: "Jazieh"
+    given-names: "Khalid"
+version: "1.0.0"
+date-released: "2026-02-15"
+license: "AGPL-3.0"
+url: "https://kjazieh.github.io/Syria-Heatmap"
+abstract: "Interactive Syria governorate heatmap app with configurable palettes, bilingual labels, and high-quality PNG export."
+keywords:
+  - syria
+  - heatmap
+  - governorates
+  - geospatial
+  - leaflet
